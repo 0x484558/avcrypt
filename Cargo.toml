@@ -1,0 +1,29 @@
+[package]
+name = "avcrypt"
+version = "1.0.0"
+edition = "2024"
+authors = ["Vladyslav \"Hex\" Yamkovyi <hex@aleph0.ai>"]
+description = "Secure file encryption using Avtor SecureToken-338S, PKCS#11 HSM (Infineon SLE 78CUFX3000PH, M7893 security controller)"
+license = "EUPL-1.2"
+publish = false
+
+[dependencies]
+hex = "0.4"
+anyhow = "1.0"
+clap = { version = "4.5", features = ["derive", "env"] }
+aes = "0.8"
+cbc = { version = "0.1", features = ["alloc"] }
+sha2 = "0.10"
+rand = "0.8"
+zeroize = { version = "1.8", features = ["zeroize_derive"] }
+tempfile = "3.20"
+rpassword = "7.4"
+cryptoki = { version = "0.10" }
+cryptoki-sys = "0.4"
+libloading = "0.8"
+pcsc = "2.9"
+subtle = "2.6"
+hmac = "0.12"
+
+[build-dependencies]
+bindgen = "0.69.5"
